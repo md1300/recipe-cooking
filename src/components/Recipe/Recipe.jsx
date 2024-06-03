@@ -3,8 +3,10 @@ import { CiAlarmOn } from "react-icons/ci";
 import { RiFireLine } from "react-icons/ri";
 
 
-const Recipe = ({recipe}) => {
+const Recipe = ({recipe,handleAddToCart}) => {
     const { id,img,title,description,ingredients,time,calories}=recipe ;
+    // console.log(recipe)
+
     return (
         <div  >
            <h1>id : {id}</h1>
@@ -26,7 +28,7 @@ const Recipe = ({recipe}) => {
                </div>
            </div>
 
-           <button className="bg-slate-400"> want to cook</button>
+           <button className="bg-slate-400" onClick={()=>handleAddToCart(recipe)}> want to cook</button>
 
         </div>
     );
